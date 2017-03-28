@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>智能组卷</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/css.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/js.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="body">
+			<p style="margin-right:0;" class="denglu"><a href="../html/denglu.html">登录</a></p>
+			<p class="denglu"><a href="../html/zhuce.html">注册</a></p>
+			<p class="denglu"><a href="wodeshijuan.html">个人中心</a></p>
+		</div>
+	</div>
+	<div class="title">
+		<div class="body">
+			<a href="../index.html"><img class="logo" src="../images/logo.png" alt=""></a>
+			<ul class="daohang">
+				<li>
+					<a href="../index.html">首页</a>
+				</li>
+				<li>
+					<a href="shougongzujuan.html">手工组卷</a>
+				</li>
+				<li class="dui liang">
+					<a class="dui1 liang1" href="zhinengzujuan.html">智能组卷</a>
+				</li>
+				<li>
+					<a href="wodeshijuan.html">我的试卷</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="body">
+		<div class="znzj">
+			<div class="znzj_left1">
+				<ul class="znzj_title">
+					<li class="znzj_click">按章节组卷</li>
+					<li>按知识点组卷</li>
+				</ul>
+				<div class="ynj_box">
+					<p class="ynj">一年级</p>
+					<ul class="nj_box">
+						<li style="margin-left:9px;">一年级</li>
+						<li>二年级</li>
+						<li>三年级</li>
+						<li style="margin-left:9px;">四年级</li>
+						<li>五年级</li>
+						<li>六年级</li>
+						<li style="margin-left:9px;">七年级</li>
+						<li>八年级</li>
+						<li>就年级</li>
+						<li style="margin-left:9px;">高一</li>
+						<li>高二</li>
+						<li>高三</li>
+					</ul>
+				</div>
+				<div class="ynj_box">
+					<p class="ynj">一年级</p>
+					<ul class="nj_box">
+						<li style="margin-left:9px;">一年级</li>
+						<li>二年级</li>
+						<li>三年级</li>
+						<li style="margin-left:9px;">四年级</li>
+						<li>五年级</li>
+						<li>六年级</li>
+						<li style="margin-left:9px;">七年级</li>
+						<li>八年级</li>
+						<li>就年级</li>
+						<li style="margin-left:9px;">高一</li>
+						<li>高二</li>
+						<li>高三</li>
+					</ul>
+				</div>
+				<div class="ynj_box">
+					<p class="ynj" >一年级</p>
+					<ul class="nj_box" style="left:-48px;">
+						<li style="margin-left:9px;">一年级</li>
+						<li>二年级</li>
+						<li>三年级</li>
+						<li style="margin-left:9px;">四年级</li>
+						<li>五年级</li>
+						<li>六年级</li>
+						<li style="margin-left:9px;">七年级</li>
+						<li>八年级</li>
+						<li>就年级</li>
+						<li style="margin-left:9px;">高一</li>
+						<li>高二</li>
+						<li>高三</li>
+					</ul>
+				</div>
+				<div class="ynj_box">
+					<p class="ynj">一年级</p>
+					<ul class="nj_box" style="left:-111px">
+						<li style="margin-left:9px;">一年级</li>
+						<li>二年级</li>
+						<li>三年级</li>
+						<li style="margin-left:9px;">四年级</li>
+						<li>五年级</li>
+						<li>六年级</li>
+						<li style="margin-left:9px;">七年级</li>
+						<li>八年级</li>
+						<li>就年级</li>
+						<li style="margin-left:9px;">高一</li>
+						<li>高二</li>
+						<li>高三</li>
+					</ul>
+				</div>
+			</div>
+			<div class="znzj_right1">
+				<div class="yxzj1">
+					<div class="yxzj">
+						 <p>已选章节（<span class="yxzj_1">7</span>）</p>
+						 <div class="clear"></div>
+					</div>
+					<div class="yxzj_nr yxzj_2">
+						<div style="height:23px;"></div>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+					</div>
+				</div>
+				<div class="yxzj1" style="display:none">
+					<div class="yxzj">
+						 <p>已选知识点（<span class="yxzj2">7</span>）</p>
+						 <div class="clear"></div>
+					</div>
+					<div class="yxzj_nr yxzj_3">
+						<div style="height:23px;"></div>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+						<p>大数的认识<span>×</span></p>
+					</div>
+				</div>
+				<div class="yxzj">
+					 <p>&nbsp;选择难度&nbsp;</p>
+					 <div class="clear"></div>
+				</div>
+				<div class="yxzj_nr">
+					<div style="height:33px;"></div>
+					<ul class="nddj">
+						<li>容&nbsp;易</li>
+						<li>较&nbsp;易</li>
+						<li>一&nbsp;般</li>
+						<li>较&nbsp;难</li>
+						<li>困&nbsp;难</li>
+					</ul>
+				</div>
+				<div class="yxzj">
+					 <p>&nbsp;选择题型&nbsp;</p>
+					 <div class="clear"></div>
+				</div>
+				<div class="yxzj_nr">
+				<div style="height:40px;"></div>
+					<div class="xztx">
+						<div class="xztx_dxt">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt" style="float:right">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt" style="float:right">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt" style="float:right">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="xztx_dxt" style="float:right">
+							<span class="dxt_zi">单选题</span>
+							<span class="dxt_jian">-</span>
+							<input class="dxt_sl" type="text" placeholder="50题可用">
+							<span class="dxt_jia">+</span>
+							<span class="dxt_daoti">道题</span>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="kszj"><a href="shijuanye.html">开始组卷</a></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="wljy">
+		<div class="body">
+			<p class="wljyjt">未来教育集团 © 2015 FUTURE EDUCATION All Right Reserved 粤ICP备1505250</p>
+		</div>
+	</div>
+</body>
+
+</html>

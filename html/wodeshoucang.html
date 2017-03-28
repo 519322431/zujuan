@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>我的收藏</title>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/js.js"></script>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/css.css">
+<style>
+	.tcdPageCode{padding-top: 58px;text-align: left;color: #ff6700;width: 362px;margin:0 auto;padding-bottom: 40px;}
+	.tcdPageCode a{display: inline-block;color: #ff6700;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ff6700;	margin: 0 2px;vertical-align: middle;}
+	.tcdPageCode a:hover{text-decoration: none;border: 1px solid #ff6700;}
+	.tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #ff6700;	border: 1px solid #ff6700;vertical-align: middle;}
+	.tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;vertical-align: middle;}
+	.layui-layer-setwin .layui-layer-close1{
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="body">
+			<p style="margin-right:0;" class="denglu"><a href="../html/denglu.html">登录</a></p>
+			<p class="denglu"><a href="../html/zhuce.html">注册</a></p>
+			<p class="denglu"><a href="wodeshijuan.html">个人中心</a></p>
+		</div>
+	</div>
+	<div class="title">
+		<div class="body">
+			<a href="../index.html"><img class="logo" src="../images/logo.png" alt=""></a>
+			<ul class="daohang">
+				<li>
+					<a href="../index.html">首页</a>
+				</li>
+				<li>
+					<a href="shougongzujuan.html">手工组卷</a>
+				</li>
+				<li>
+					<a href="zhinengzujuan.html">智能组卷</a>
+				</li>
+				<li>
+					<a href="wodeshijuan.html">我的试卷</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="body">
+		<div class="znzj">
+			<div class="znzj_left">
+				<div class="znzj_tx">
+					<img src="../images/znzj_tx.png" alt="">
+				</div>
+				<ul class="znzj_fl">
+					<li><a href="#"><span class="znzj_grzy">个人主页</span></a></li>
+					<li><a href="wodeshijuan.html"><span class="znzj_wdsj">我的试卷</span></a></li>
+					<li class="znzj_fl_hover hover"><a href="wodeshoucang.html"><span class="znzj_wdsc">我的收藏</span></a></li>
+					<li><a href="genggaimima.html"><span class="znzj_ggmm">更改密码</span></a></li>
+				</ul>
+			</div>
+			<div class="znzj_right">
+				<div class="wdsc_title">
+					<p class="wdsc_px">按难度排序</p>
+					<p class="wdsc_px">按使用次数排序</p>
+					<p class="wdsc_px">按更新时间排序</p>
+					<p class="paichu1">
+						<input class="wdsc_checkbox" type="checkbox" id="paichu">
+						<label for="paichu">排除已使用试题</label>
+					</p>
+					<p class="xuanze_quanbu">
+						<input class="wdsc_checkbox" type="checkbox" id="quanxuan">
+						<label for="quanxuan">选择全部试题</label>
+					</p>
+					<p class="wdsc_qksc" style="padding:0">清空收藏</p>
+					<div class="clear"></div>
+				</div>
+				<!-- 选择题 -->
+				<div class="wdsc_xzt">
+					<div class="xzt_xq">
+						<p class="xzt_tm">1.下列各句句式相同的一向是（   ）</p>
+						<ul class="xzt_xx">
+							<li style="float:left">A.是寡人之过也</li>
+							<li style="float:right">B.太子及宾客知其是也</li>
+							<li style="float:left">C.蚓无爪牙之利，筋骨志强</li>
+							<li style="float:right">D.秦王复荆轲，被八创</li>
+						</ul>
+						<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+						</div>
+						<div style="height:26px;"></div>
+						<div style="background:#eee;">
+							<ul class="xzt_jb">
+								<li>难度：<span>容易</span></li>
+								<li>使用次数：<span>202</span></li>
+								<li>更新时间：2016-10-15</li>
+							</ul>
+							<ul class="xzt_btn">
+								<li class="xzt_jrsj">加入试卷</li>
+								<li class="xzt_qxsc xzt_qxsc1">取消收藏</li>
+								<li class="xzt_cksj">查看答案</li>
+							</ul>
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="wdsc_xzt">
+					<div class="xzt_xq">
+						<p class="xzt_tm">1.下列各句句式相同的一向是（   ）</p>
+						<ul class="xzt_xx">
+							<li style="float:left">A.是寡人之过也</li>
+							<li style="float:right">B.太子及宾客知其是也</li>
+							<li style="float:left">C.蚓无爪牙之利，筋骨志强</li>
+							<li style="float:right">D.秦王复荆轲，被八创</li>
+						</ul>
+						<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+						</div>
+						<div style="height:26px;"></div>
+						<div style="background:#eee;">
+							<ul class="xzt_jb">
+								<li>难度：<span>容易</span></li>
+								<li>使用次数：<span>202</span></li>
+								<li>更新时间：2016-10-15</li>
+							</ul>
+							<ul class="xzt_btn">
+								<li class="xzt_jrsj">加入试卷</li>
+								<li class="xzt_qxsc xzt_qxsc1">取消收藏</li>
+								<li class="xzt_cksj">查看答案</li>
+							</ul>
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="wdsc_xzt">
+					<div class="xzt_xq">
+						<p class="xzt_tm">1.下列各句句式相同的一向是（   ）</p>
+						<ul class="xzt_xx">
+							<li style="float:left">A.是寡人之过也</li>
+							<li style="float:right">B.太子及宾客知其是也</li>
+							<li style="float:left">C.蚓无爪牙之利，筋骨志强</li>
+							<li style="float:right">D.秦王复荆轲，被八创</li>
+						</ul>
+						<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+						</div>
+						<div style="height:26px;"></div>
+						<div style="background:#eee;">
+							<ul class="xzt_jb">
+								<li>难度：<span>容易</span></li>
+								<li>使用次数：<span>202</span></li>
+								<li>更新时间：2016-10-15</li>
+							</ul>
+							<ul class="xzt_btn">
+								<li class="xzt_jrsj">加入试卷</li>
+								<li class="xzt_qxsc xzt_qxsc1">取消收藏</li>
+								<li class="xzt_cksj">查看答案</li>
+							</ul>
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="wdsc_xzt">
+					<div class="xzt_xq">
+						<p class="xzt_tm">1.下列各句句式相同的一向是（   ）</p>
+						<ul class="xzt_xx">
+							<li style="float:left">A.是寡人之过也</li>
+							<li style="float:right">B.太子及宾客知其是也</li>
+							<li style="float:left">C.蚓无爪牙之利，筋骨志强</li>
+							<li style="float:right">D.秦王复荆轲，被八创</li>
+						</ul>
+						<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+						</div>
+						<div style="height:26px;"></div>
+						<div style="background:#eee;">
+							<ul class="xzt_jb">
+								<li>难度：<span>容易</span></li>
+								<li>使用次数：<span>202</span></li>
+								<li>更新时间：2016-10-15</li>
+							</ul>
+							<ul class="xzt_btn">
+								<li class="xzt_jrsj">加入试卷</li>
+								<li class="xzt_qxsc xzt_qxsc1">取消收藏</li>
+								<li class="xzt_cksj">查看答案</li>
+							</ul>
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="zhslb_yema">
+		            <div class="tcdPageCode">
+    				</div>
+		        </div>
+				<!-- 试题蓝 -->
+				<div class="wdsc_stl">
+					<p class="stl_title">试题篮（<span>0</span>）</p>
+					<div class="stl_nr">
+						<p class="stl_sztm">请选择题目</p>
+						<div class="stl_sztm1" style="display:none">
+							<p class="stl_xzt">选择题：<span>1</span>道题</p>
+							<p class="stl_scsj stl_scsj1">生成试卷</p>
+							<p class="stl_scsj stl_qkst" style="margin-top:10px;">清空试题</p>
+						</div>
+					</div>
+				</div>
+				<!-- 弹框 -->
+				<!-- 生成试题 -->
+				<div class="stl_scst" style="display:none">
+					<p>正在组卷，请稍后……</p>
+					<div class="jindu">
+						<div class="tiao"></div>
+					</div>
+					<div class="jindu_sz"><span>0</span>  %</div>
+				</div>
+				<!-- 清空试题 -->
+
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="wljy">
+		<div class="body">
+			<p class="wljyjt">未来教育集团 © 2015 FUTURE EDUCATION All Right Reserved 粤ICP备1505250</p>
+		</div>
+	</div>
+</body>
+<script src="../js/page.js"></script>
+<script>
+$('.stl_scsj1').click(function(){
+	$('.stl_scst').show()
+	$('.tiao').stop().animate({
+		width:'500px'
+	},2000,function(){
+		window.location="shijuanye.html"
+	})
+	layer.open({
+        type: 1,
+        title:"",
+        skin: 'stl_scst',
+        closeBtn: 0, //不显示关闭按钮
+        area:'561px',
+        content:$(".stl_scst")
+	});
+})
+	$(".tcdPageCode").createPage({
+        pageCount:12,
+        current:1,
+        backFn:function(p){
+            console.log(p);
+        }
+    });
+</script>
+</html>

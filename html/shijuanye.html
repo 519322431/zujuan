@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>试卷页</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/css.css">
+<script src="../js/angular.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/js.js"></script>
+<script src="../js/shijuan.js"></script>
+<style>
+</style>
+</head>
+<body ng-app="app">
+
+	<!-- 模板 -->
+	<div class="xuanzeti muban1" style="display:none">
+		<div class="dyj_xzt">
+			<table class="sjy_table1">
+				<tr>
+					<th>评卷人</th>
+					<th>得分</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<p class="dyj_xzt1"><span class="dati_tihao"></span><span class='dyj_timu'>、应用题</span><span class="dyj_zhushi">题型注释</span></p>
+			<div class="dyj_btn2">
+				<ul class="dyj_btn1 dyj_btn4">
+					<li class="xzt_qk">清空</li>
+					<li class="xzt_sg">修改</li>
+					<li class="xzt_shanchu">删除</li>
+					<li class="xzt_shangyi">上移</li>
+					<li class="xzt_xiayi" style="border-right:0;">下移</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 题目正文 -->
+		<div class="dyj_tmzw">
+		</div>
+	</div>
+	<div class="xuanzeti muban2" style="display:none">
+		<div class="dyj_xzt">
+			<table class="sjy_table1">
+				<tr>
+					<th>评卷人</th>
+					<th>得分</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<p class="dyj_xzt1"><span class="dej_timu"><span></span>、应用题</span><span class="dej_zhushi">（题型注释）</span></p>
+			<div class="dyj_btn2">
+				<ul class="dyj_btn1 dyj_btn4">
+					<li class="xzt_qk">清空</li>
+					<li class="xzt_sg">修改</li>
+					<li class="xzt_shanchu">删除</li>
+					<li class="xzt_shangyi">上移</li>
+					<li class="xzt_xiayi" style="border-right:0;">下移</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 题目正文 -->
+		<div class="dyj_tmzw">
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="body">
+			<p style="margin-right:0;" class="denglu"><a href="../html/denglu.html">登录</a></p>
+			<p class="denglu"><a href="../html/zhuce.html">注册</a></p>
+			<p class="denglu"><a href="wodeshijuan.html">个人中心</a></p>
+		</div>
+	</div>
+	<div class="title">
+		<div class="body">
+			<a href="../index.html"><img class="logo" src="../images/logo.png" alt=""></a>
+			<ul class="daohang">
+				<li>
+					<a href="../index.html">首页</a>
+				</li>
+				<li class="liang dui">
+					<a class="liang1 dui1" href="shougongzujuan.html">手工组卷</a>
+				</li>
+				<li>
+					<a href="zhinengzujuan.html">智能组卷</a>
+				</li>
+				<li>
+					<a href="wodeshijuan.html">我的试卷</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="body">
+		<div class="znzj">
+			<div class="sjy_title">
+				<ul class="sjy_fl">
+					<li class="sj_shezhi">试卷设置</li>
+					<li class="sj_fenzhi">设置分值</li>
+					<li><a href="shougongzujuan.html">增加题目</a></li>
+					<li class="sj_baocun">保存</li>
+					<li class="sj_xiazai">下载</li>
+					<li style="border-right:1px solid #ff6700" class="sj_dayin">打印</li>
+				</ul>
+			</div>
+			<!-- 试卷主体 -->
+			<div class="sj_zhuti">
+				<div class="sj_left sj_zbt_4" ></div>
+				<div class="sj_right">
+				<p class="sj_juemi sj_zbt_3">绝密★启封并使用完毕前</p>
+				<div class="clear"></div>
+				<p class="sj_zbt sj_zbt_1">试卷主标题</p>
+				<div class="clear"></div>
+				<p class="sj_fbt sj_zbt_2">试卷副标题</p>
+				<div class="clear"></div>
+					<p class="sj_ksfw sj_zbt_5">考试范围：xxx；考试时间：xxx；命题人：xxx；</p>
+					<p class="sj_grxx sj_zbt_6">学校：<span>_____ </span>姓名：<span>_____ </span>班级：<span>_____ </span>考号：<span>_____ </span></p>
+					<table class="sjy_table sj_zbt_7">
+						<tr class="yi">
+							<th>题号</th>
+							<th class="tishu"></th>
+							<th class="tishu"></th>
+							<th class="tishu"></th>
+							<th class="tishu"></th>
+							<th>总分</th>
+						</tr>
+						<tr>
+							<td>得分</td>
+							<td class="fenshu"></td>
+							<td class="fenshu"></td>
+							<td class="fenshu"></td>
+							<td class="fenshu"></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="sjy_zysx"> 
+						<div class="shiyishixiang sj_zbt_8">
+							<p class="zysx_zi">注意事项：</p>
+							<pre class="zysx_zi zysx_zi1">1.答题前填写好自己的姓名、班级、考号等信息<br>2.请将答案正确填写在答题卡上</pre>
+						</div>
+						<div class="diyijuan diyijuan_1" >
+							<div class="sjy_dyj">
+								<p class="dyj_title dyj_title1"><span class="juanbiao">第I卷</span><span class="sj_shuoming">（选择题）</span></p>
+								<div class="dyj_btn">
+									<ul class="dyj_btn1 dyj_btn3">
+										<li class="sj_tjtx">添加题型</li>
+										<li class="sj_fjt sj_fjt1">修改</li>
+										<li class="dyj_shangyi">上移</li>
+										<li class="diyijuan_xiayi" style="border-right:0;">下移</li>
+									</ul>
+								</div>
+								<div class="clear"></div>
+								<p class="juantou_shuoming">试卷说明</p>
+							</div>
+							<div class="xuanzeti 1111 diyi">
+								<div class="dyj_xzt">
+									<table class="sjy_table1">
+										<tr>
+											<th>评卷人</th>
+											<th>得分</th>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+									<p class="dyj_xzt1"><span class="dati_tihao"></span><span class='dyj_timu'>、选择题</span><span class="dyj_zhushi">题型注释</span></p>
+									<div class="dyj_btn2">
+										<ul class="dyj_btn1 dyj_btn4">
+											<li class="xzt_qk">清空</li>
+											<li class="xzt_sg">修改</li>
+											<li class="xzt_shanchu">删除</li>
+											<li class="xzt_shangyi">上移</li>
+											<li class="xzt_xiayi" style="border-right:0;">下移</li>
+										</ul>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<!-- 题目正文 -->
+								<div class="dyj_tmzw">
+									<div class="timu timu1">
+										
+										<div class="clear"></div>
+										<div id="yi" class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao">1</span>1111.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p  class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="er" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>22222.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="san" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>33333.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="si" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>44444.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="xuanzeti 1111 dier">
+								<div class="dyj_xzt">
+									<table class="sjy_table1">
+										<tr>
+											<th>评卷人</th>
+											<th>得分</th>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+									<p class="dyj_xzt1"><span class="dati_tihao"></span><span class='dyj_timu'>、应用题</span><span class="dyj_zhushi">题型注释</span></p>
+									<div class="dyj_btn2">
+										<ul class="dyj_btn1 dyj_btn4">
+											<li class="xzt_qk">清空</li>
+											<li class="xzt_sg">修改</li>
+											<li class="xzt_shanchu">删除</li>
+											<li class="xzt_shangyi">上移</li>
+											<li class="xzt_xiayi" style="border-right:0;">下移</li>
+										</ul>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<!-- 题目正文 -->
+								<div class="dyj_tmzw">
+									<div id="wu" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao">1</span>1111.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="liu" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>22222.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="qi" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>33333.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="ba" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>44444.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="diyijuan diyijuan_2">
+							<div class="sjy_dyj">
+								<p class="dyj_title dyj_title2"><span class="juanbiao1">第II卷</span><span class="sj_shuoming1">（选择题）</span></p>
+								<div class="dyj_btn">
+									<ul class="dyj_btn1 dyj_btn3">
+										<li class="sj_tjtx">添加题型</li>
+										<li class="sj_fjt sj_fjt2">修改</li>
+										<li class="dyj_shangyi">上移</li>
+										<li class="diyijuan_xiayi" style="border-right:0;">下移</li>
+									</ul>
+								</div>
+								<div class="clear"></div>
+								<p>试卷说明</p>
+							</div>
+							<div class="xuanzeti 2222 disan">
+								<div class="dyj_xzt">
+									<table class="sjy_table1">
+										<tr>
+											<th>评卷人</th>
+											<th>得分</th>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+									<p class="dyj_xzt1"><span class="dati_tihao"></span><span class='dyj_timu'>、填空题</span><span class="dyj_zhushi">题型注释</span></p>
+									<div class="dyj_btn2">
+										<ul class="dyj_btn1 dyj_btn4">
+											<li class="xzt_qk">清空</li>
+											<li class="xzt_sg">修改</li>
+											<li class="xzt_shanchu">删除</li>
+											<li class="xzt_shangyi">上移</li>
+											<li class="xzt_xiayi" style="border-right:0;">下移</li>
+										</ul>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<!-- 题目正文 -->
+								<div class="dyj_tmzw">
+									<div id="jiu" class="timu timu2">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi1">上移</li>
+												<li class="zxt_xiayi1" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti1"><span class="tihao1"></span>11111.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shi" class="timu timu2">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi1">上移</li>
+												<li class="zxt_xiayi1" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti1"><span class="tihao1"></span>22222.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shiyi" class="timu timu2">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi1">上移</li>
+												<li class="zxt_xiayi1" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti1"><span class="tihao1"></span>33333.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shier" class="timu timu2 si">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi1">上移</li>
+												<li class="zxt_xiayi1" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti1"><span class="tihao1"></span>4444.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="xuanzeti 2222">
+								<div class="dyj_xzt">
+									<table class="sjy_table1">
+										<tr>
+											<th>评卷人</th>
+											<th>得分</th>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+									<p class="dyj_xzt1"><span class="dati_tihao"></span><span class='dyj_timu'>、附加题</span><span class="dyj_zhushi">题型注释</span></p>
+									<div class="dyj_btn2">
+										<ul class="dyj_btn1 dyj_btn4">
+											<li class="xzt_qk">清空</li>
+											<li class="xzt_sg">修改</li>
+											<li class="xzt_shanchu">删除</li>
+											<li class="xzt_shangyi">上移</li>
+											<li class="xzt_xiayi" style="border-right:0;">下移</li>
+										</ul>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<!-- 题目正文 -->
+								<div class="dyj_tmzw">
+									<div id="shisan" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao">1</span>1111.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shisi" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>22222.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shiwu" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>33333.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+									<div id="shiliu" class="timu timu1">
+										
+										<div class="clear"></div>
+										<div class="timu_xq">
+										<div class="dyj_btn">
+											<ul class="dyj_btn1">
+												<li class="timu_daan">答案</li>
+												<li>替换</li>
+												<li class="timu_shanchu">删除</li>
+												<li class="zxt_shangyi">上移</li>
+												<li class="zxt_xiayi" style="border-right:0;">下移</li>
+											</ul>
+										</div>
+											<p class="wenti"><span class="tihao"></span>44444.在矩形ABCD中，AB=2a，AD=a，图中阴影部分是以AB为直径的半圆，现在向矩形ABCD内随机撒4000粒豆子（豆子的大小忽略不计），根据你所学的概率统计知识，下列四个选项中最有可能落在阴影部分内的豆子数目是（）</p>
+											<ul class="timu_xx">
+												<li>A.1000π</li>
+												<li>B.2000π</li>
+												<li>C.3000π</li>
+												<li>D.4000π</li>
+											</ul>
+											<div class="clear"></div>
+											<p class="xzt_da" style="display:none">答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 题目列表 -->
+			<div class="timu_liebiao">
+				<p class="liebiao_title">题目列表(<span>100</span>)</p>
+				<div class="liebiao_nr">
+				<div style="height:8px;"></div>
+					<p class="liebiao_dyj">第 I 卷</p>
+					<p class="liebiao_dyj">一、选择题（30）</p>
+					<ul class="liebiao_xh">
+						<li><a href="#yi">1</a></li>
+						<li><a href="#er">2</a></li>
+						<li><a href="#san">3</a></li>
+						<li><a href="#si">4</a></li>
+					</ul>
+					<p class="liebiao_dyj">二、选择题（10）</p>
+					<ul class="liebiao_xh">
+						<li><a href="#wu">1</a></li>
+						<li><a href="#liu">2</a></li>
+						<li><a href="#qi">3</a></li>
+						<li><a href="#ba">4</a></li>
+					</ul>
+					<p class="liebiao_dyj">三、选择题（10）</p>
+					<ul class="liebiao_xh">
+						<li><a href="#jiu">1</a></li>
+						<li><a href="#shi">2</a></li>
+						<li><a href="#shiyi">3</a></li>
+						<li><a href="#shier">4</a></li>
+					</ul>
+					<p class="liebiao_dyj">四、选择题（10）</p>
+					<ul class="liebiao_xh">
+						<li><a href="#shisan">1</a></li>
+						<li><a href="#shisi">2</a></li>
+						<li><a href="#shiwu">3</a></li>
+						<li><a href="#shiliu">4</a></li>
+					</ul>
+						<div style="height:8px;"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!-- 试卷设置 -->
+			<div class="shijuan_shezhi" style="display:none">
+				<p class="shezhi_zbt"><span class="zbt">主标题：</span><span class="zbt_yc zbt_yc1">隐藏</span><input class="zbt_bjk shijuan_zbt" type="text" placeholder="试卷主标题内容编辑框" value="试卷主标题"></p>
+				<p class="shezhi_zbt"><span class="zbt">副标题：</span><span class="zbt_yc zbt_yc2">隐藏</span><input class="zbt_bjk shijuan_fbt" type="text" placeholder="试卷副标题内容编辑框" value="试卷副标题"></p>
+				<p class="shezhi_zbt"><span class="zbt">保密标签：</span><span class="zbt_yc zbt_yc3">隐藏</span><input class="zbt_bjk shijuan_bmbq" type="text" placeholder="绝密★启用前" value="绝密★启用前"></p>
+				<p class="shezhi_zbt"><span class="zbt">密封线：</span><span class="zbt_yc zbt_yc4">隐藏</span></p>
+				<p class="shezhi_zbt"><span class="zbt">试卷信息栏：</span><span class="zbt_yc zbt_yc5">隐藏</span><input class="zbt_bjk shijuan_sjxxl" type="text" placeholder="考试范围：xxx；考试时间：xxx；命题人：xxx" value="考试范围：xxx；考试时间：xxx；命题人：xxx"></p>
+				<p class="shezhi_zbt"><span class="zbt">考生输入栏：</span><span class="zbt_yc zbt_yc6">隐藏</span><input class="zbt_bjk shijuan_kssrl" type="text" placeholder="学校：_____ 姓名：_____ 班级：_____ 考号：_____ " value="学校：_____ 姓名：_____ 班级：_____ 考号：_____ "></p>
+				<p class="shezhi_zbt"><span class="zbt">誊分栏：</span><span class="zbt_yc zbt_yc7">隐藏</span></p>
+				<p class="shezhi_zbt"><span class="zbt" style="float:left">注意事项：</span><span style="float:left" class="zbt_yc zbt_yc8">隐藏</span><textarea class="zbt_bjk shijuan_zysx" style="line-height:22px;" type="text" placeholder="注意事项" value="注意事项"></textarea></p>
+				<p style="margin-left:176px;" class="shezhi_qd shijuan_qd">确&nbsp;定</p>
+				<p style="margin-left:40px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 保存 -->
+			<div class="shijuan_baocun" style="display:none">
+				<p class="shezhi_mc"><span class="zbt">试卷名称：</span><input class="zbt_bjk shezhi_mingcheng" type="text" placeholder="设置试卷名称"></p>
+				<p style="margin-left:141px;margin-top:75px;" class="shezhi_qd baocun_qd">确&nbsp;定</p>
+				<p style="margin-left:40px;margin-top:75px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 下载设置 -->
+			<div class="shijuan_xiazai" style="display:none">
+				<p class="xiazai_geshi xiazai_geshi1">格式：<span>word</span><span>PDF</span></p>
+				<p style="margin-top:11px;" class="xiazai_geshi xiazai_geshi2">格式：<span>答案与题目同步</span><span>答案与题目分离</span></p>
+				<p style="margin-left:176px;" class="shezhi_qd xiazai_qd">确&nbsp;定</p>
+				<p style="margin-left:40px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 题头设置 -->
+			<div class="shijuan_titou" style="display:none">
+				<p class="titou_toubu"><span class="zbt">题目头部：</span><span class="zbt_yc zbt_yc_1">隐藏</span></p>
+				<p class="titou_toubu"><span class="zbt">评分栏：</span><span class="zbt_yc zbt_yc_2">隐藏</span></p>
+				<p class="shezhi_mc"><span class="zbt">题型名称：</span><input class="zbt_bjk zbt_bjk_1" type="text" placeholder="请输入题型名称"></p>
+				<p class="titou_toubu"><span class="zbt" style="float:left">题型注释：</span><textarea class="zbt_bjk titou_zhishi zbt_bjk_2" style="" type="text" placeholder="注释"></textarea></p>
+				<p style="margin-left:142px;" class="shezhi_qd titou_qd">确&nbsp;定</p>
+				<p style="margin-left:40px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 设置分值 -->
+			<div class="shezhi_fenzhi" style="display:none" ng-controller="TaskCtrl">
+				<p class="fenzhi_zbt">试卷主标题</p>
+				<p class="fenzhi_fbt">试卷副标题</p>
+				<div class="fenzhi_xq">
+					<p class="fenzhi_tihao fenzhi_border">题号</p>
+					<p class="fenzhi_tihao fenzhi_border" style="border-right:0;">分数</p>
+					<div class="fenzhi_border">
+						<p class="fenzhi_tihao">一、选择题</p>
+						<p class="fenzhi_tihao first_dt"><span>{{a0 -- a1 -- a2}}</span>&nbsp;分</p>	
+						<div class="clear"></div>
+					</div>
+					<div class="diyi_dati">
+						<div class="fenzhi_border">
+							<p class="fenzhi_tihao">1&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p class="fenzhi_tihao"><input class="fenzhi_input" type="text"  value="{{a0}}">&nbsp;分</p>
+							<div class="clear"></div>
+						</div>
+						<div class="fenzhi_border">
+							<p class="fenzhi_tihao">2&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p class="fenzhi_tihao"><input class="fenzhi_input" type="text"  value="{{a1}}">&nbsp;分</p>
+							<div class="clear"></div>
+						</div>
+						<div class="fenzhi_border">
+							<p class="fenzhi_tihao">3&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p class="fenzhi_tihao"><input class="fenzhi_input" type="text"  value="{{a2}}">&nbsp;分</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="fenzhi_border">
+						<p class="fenzhi_tihao">二、填空题</p>
+						<p class="fenzhi_tihao second_dt"><span>{{b0 -- b1}}</span>&nbsp;分</p>	
+						<div class="clear"></div>
+					</div>
+					<div class="dier_dati">
+						<div class="fenzhi_border">
+							<p class="fenzhi_tihao">1&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p class="fenzhi_tihao"><input class="fenzhi_input" type="text" value="9">&nbsp;分</p>
+							<div class="clear"></div>
+						</div>
+						<div class="fenzhi_border">
+							<p class="fenzhi_tihao">1&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<p class="fenzhi_tihao"><input class="fenzhi_input" type="text" value="10">&nbsp;分</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="fenzhi_border">
+						<p class="fenzhi_tihao zong_fen">总分：<span>{{a0--a1--a2--b0--b1}}</span>分</p>
+						<div class="clear"></div>
+					</div>
+				</div>
+					<p style="margin-left:94px;margin-top:21px;" class="shezhi_qd fenzhi_qd">确&nbsp;定</p>
+					<p style="margin-left:40px;margin-top:21px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 卷一分卷头设置 -->
+			<div class="fenjuantou_shezhi1" style="display:none">
+				<div class="fjt_fenyuanyi">
+					<p class="titou_toubu"><span class="zbt">分卷一卷头：</span><span class="zbt_yc fenjuantou_yc1" style="margin-left: 37px;">隐藏</span></p>
+					<p class="fjt_jub"><span class="fjt_jub1">卷标：</span><input class="zbt_bjk shijuan_juanbiao1" style="margin-left:0;" type="text" placeholder="第I卷（选择题）"></p>
+					<p class="fjt_jub" style="padding-bottom:12px;"><span class="fjt_jub1">试卷说明：</span><textarea class="zbt_bjk shijuan_shuoming shijuan_shuoming1" style="" type="text" placeholder="试卷说明"></textarea></p>
+				</div>
+				<p style="margin-left:141px;margin-top:31px;" class="shezhi_qd fenjuantou_qd1">确&nbsp;定</p>
+				<p style="margin-left:40px;margin-top:31px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 卷二分卷头设置 -->
+			<div class="fenjuantou_shezhi2" style="display:none">
+				<div class="fjt_fenyuanyi">
+					<p class="titou_toubu"><span class="zbt">分卷二卷头：</span><span class="zbt_yc fenjuantou_yc2" style="margin-left: 37px;">隐藏</span></p>
+					<p class="fjt_jub"><span class="fjt_jub1">卷标：</span><input class="zbt_bjk shijuan_juanbiao2" style="margin-left:0;" type="text" placeholder="第II卷（选择题）"></p>
+					<p class="fjt_jub" style="padding-bottom:12px;"><span class="fjt_jub1">试卷说明：</span><textarea class="zbt_bjk shijuan_shuoming shijuan_shuoming2" style="" type="text" placeholder="试卷说明"></textarea></p>
+				</div>
+				<p style="margin-left:173px;margin-top:31px;" class="shezhi_qd fenjuantou_qd2">确&nbsp;定</p>
+				<p style="margin-left:40px;margin-top:31px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+			<!-- 添加新题型 -->
+			<div class="tianjia_tixing" style="display:none">
+				<p class="shezhi_mc"><span class="zbt">题型名称：</span><input class="zbt_bjk tixing_xinzeng" type="text" placeholder="设置题型名称(标明题号，例：一、选择题)"></p>
+				<p class="titou_toubu"><span class="zbt" style="float:left">题型注释：</span><textarea class="zbt_bjk titou_zhishi tixing_xinzeng1" style="height:160px;" type="text" placeholder="注释"></textarea></p>
+				<p style="margin-left:173px;margin-top:54px;" class="shezhi_qd tianjian_qd">确&nbsp;定</p>
+				<p style="margin-left:40px;margin-top:54px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+			</div>
+		</div>
+	</div>
+	<div class="wljy">
+		<div class="body">
+			<p class="wljyjt">未来教育集团 © 2015 FUTURE EDUCATION All Right Reserved 粤ICP备1505250</p>
+		</div>
+	</div>
+	
+</body>
+<script>
+	for (var i = 0; i < $('.diyi_dati .fenzhi_input').length; i++) {
+		$($('.diyi_dati .fenzhi_input')[i]).attr('ng-model','a'+i)
+	};
+	for (var i = 0; i < $('.dier_dati .fenzhi_input').length; i++) {
+		$($('.dier_dati .fenzhi_input')[i]).attr('ng-model','b'+i)
+	};
+	angular.module('app',[])
+	.controller('TaskCtrl',function($scope){
+		for (var i = 0; i < $('.diyi_dati .fenzhi_input').length; i++) {
+			var obj="a"+i;
+			$scope.obj=parseInt("0");	
+		};
+		for (var i = 0; i < $('.diyi_dati .fenzhi_input').length; i++) {
+			var obj="b"+i;
+			$scope.obj=parseInt("0");	
+		};
+	})
+</script>
+</html>

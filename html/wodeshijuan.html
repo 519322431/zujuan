@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>我的试卷</title>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/js.js"></script>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/css.css">
+<style>
+	.tcdPageCode{padding-top: 58px;text-align: left;color: #ccc;width: 362px;margin:0 auto;padding-bottom: 40px;}
+	.tcdPageCode a{display: inline-block;color: #bca78a;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;vertical-align: middle;}
+	.tcdPageCode a:hover{text-decoration: none;border: 1px solid #ff6700;}
+	.tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #ff6700;	border: 1px solid #ff6700;vertical-align: middle;}
+	.tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;vertical-align: middle;}
+	.layui-layer-setwin .layui-layer-close1{
+		display: none;
+	}
+	.layui-layer-content{
+		background: #fff;
+	}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="body">
+			<p style="margin-right:0;" class="denglu"><a href="../html/denglu.html">登录</a></p>
+			<p class="denglu"><a href="../html/zhuce.html">注册</a></p>
+			<p class="denglu"><a href="wodeshijuan.html">个人中心</a></p>
+		</div>
+	</div>
+	<div class="title">
+		<div class="body">
+			<a href="../index.html"><img class="logo" src="../images/logo.png" alt=""></a>
+			<ul class="daohang">
+				<li>
+					<a href="../index.html">首页</a>
+				</li>
+				<li>
+					<a href="shougongzujuan.html">手工组卷</a>
+				</li>
+				<li>
+					<a href="zhinengzujuan.html">智能组卷</a>
+				</li>
+				<li class="dui liang">
+					<a class="dui1 liang1" href="wodeshijuan.html">我的试卷</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="body">
+		<div class="znzj">
+			<div class="znzj_left">
+				<div class="znzj_tx">
+					<img src="../images/znzj_tx.png" alt="">
+				</div>
+				<ul class="znzj_fl">
+					<li><a href="#"><span class="znzj_grzy">个人主页</span></a></li>
+					<li class="znzj_fl_hover hover"><a href="wodeshijuan.html"><span class="znzj_wdsj">我的试卷</span></a></li>
+					<li><a href="wodeshoucang.html"><span class="znzj_wdsc">我的收藏</span></a></li>
+					<li><a href="genggaimima.html"><span class="znzj_ggmm">更改密码</span></a></li>
+				</ul>
+			</div>
+			<div class="znzj_right">
+				<ul class="znzj_head">
+					<!-- <li style="margin-left:0"><a href="shougongzujuan.html">开始组卷</a></li>
+					<li>打印试卷</li> -->
+					<li style="margin-left:0" class="znzj_shanchu">批量删除</li>
+				</ul>
+				<input class="znzj_ss" type="text" placeholder="试卷名称">
+				<p class="znzj_ss_btn">搜索</p>
+				<div class="clear"></div>
+				<table  class="zsslb">
+					<tr class="one">
+	                    <th width="44">
+	                        <input class="zsslb_quanxuan" name="checkall"  type="checkbox">
+	                    </th>
+	                    <th width="60">试卷编号</th>
+	                    <th width="116">试卷名称</th>
+	                    <th width="136">组卷时间</th>
+	                    <th width="126" class="zsslb_table_last">
+	                        <span class="zsslb_shanchu">操作</span>
+	                    </th>
+	                </tr>
+	                <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji zsslb_xiazai">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                   <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><input class="xuan1" name='checkname' type="checkbox"></td>
+		                <td>2016021201</td>
+		                <td>高三数学必修一模拟考试-20160212</td>
+		                <td>2016-9-29</td>
+		                <td class="zsslb_table_last">
+		                    <span class="zsslb_bianji">下载</span><a href="shijuanye.html"><span class="zsslb_bianji bianji1">编辑</span></a></span><span class="zsslb_delete">删除</span>
+		                </td>
+		            </tr>
+				</table>
+				<div class="zhslb_yema">
+		            <div class="tcdPageCode">
+    				</div>
+		        </div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="wljy">
+		<div class="body">
+			<p class="wljyjt">未来教育集团 © 2015 FUTURE EDUCATION All Right Reserved 粤ICP备1505250</p>
+		</div>
+	</div>
+	<!-- 下载设置 -->
+	<div class="shijuan_xiazai shijuan_xiazai1" style="display:none">
+		<p class="xiazai_geshi xiazai_geshi1">格式：<span>word</span><span>PDF</span></p>
+		<p style="margin-top:11px;" class="xiazai_geshi xiazai_geshi2">格式：<span>答案与题目同步</span><span>答案与题目分离</span></p>
+		<p style="margin-left:176px;" class="shezhi_qd xiazai_qd">确&nbsp;定</p>
+		<p style="margin-left:40px;" class="shezhi_qd shezhi_qx">取&nbsp;消</p>
+	</div>
+</body>
+<script src="../js/page.js"></script>
+<script>
+$('.zsslb_xiazai').click(function(){
+	layer.open({
+	    type: 1,
+	    title:"下载设置",
+	    skin: 'stl_scst1',
+	    closeBtn: 0, //不显示关闭按钮
+	    area:['595px','358px'],
+	    content:$(".shijuan_xiazai1")
+	});
+})
+$('.shezhi_qx').click(function(){
+	layer.closeAll('page');
+})
+$('.shezhi_qd').click(function(){
+	layer.closeAll('page');
+})
+$('.xiazai_geshi1 span').click(function(){
+	var i=$('.xiazai_geshi1 span').index(this);
+	$('.xiazai_geshi1 span').css({'background':'#fff','color':'#000'}).eq(i).css({'background':'#ff6700','color':'#fff'})
+})
+$('.xiazai_geshi2 span').click(function(){
+	var i=$('.xiazai_geshi2 span').index(this);
+	$('.xiazai_geshi2 span').css({'background':'#fff','color':'#000'}).eq(i).css({'background':'#ff6700','color':'#fff'})
+})
+	$(".tcdPageCode").createPage({
+        pageCount:12,
+        current:1,
+        backFn:function(p){
+            console.log(p);
+        }
+    });
+    $(".zsslb tbody tr").each(function(i,obj){
+        if(i%2==0){
+            $(obj).addClass('two');
+        }else{
+            $(obj).addClass('three');
+        }
+    })
+    $(".zsslb_quanxuan").click(function(){   
+	    if(this.checked){ 
+	        $("input[name='checkname']").attr('checked', true)
+	    }else{ 
+	        $("input[name='checkname']").attr('checked', false)
+	    } 
+	});
+</script>
+</html>
